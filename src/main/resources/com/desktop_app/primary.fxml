@@ -4,106 +4,78 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<HBox xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.desktop_app.PrimaryController"
-      prefHeight="720.0" 
-      prefWidth="1280.0"
-      styleClass="root-container"
-      stylesheets="@Primary.css">
+<HBox prefHeight="720.0" prefWidth="1280.0" styleClass="root-container" stylesheets="@Primary.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.desktop_app.PrimaryController">
     
     <!-- Main Content Area (Left Side - Orange Background) -->
-    <StackPane HBox.hgrow="ALWAYS" styleClass="content-area">
+    <StackPane styleClass="content-area" HBox.hgrow="ALWAYS">
         <!-- Background Image -->
         <ImageView fitHeight="720.0" fitWidth="1024.0" preserveRatio="false">
             <image>
-                <Image url="@Background.png"/>
+                <Image url="@Background.png" />
             </image>
         </ImageView>
         
         <!-- Buttons Grid Overlay -->
-        <GridPane alignment="CENTER" hgap="40" vgap="40" styleClass="buttons-grid">
+        <GridPane alignment="CENTER" hgap="40" styleClass="buttons-grid" vgap="40">
             <padding>
-                <Insets top="80" bottom="200" left="80" right="80"/>
+                <Insets bottom="200" left="80" right="80" top="80" />
             </padding>
             
             <!-- Top Row Buttons -->
-            <Button text="رسومات عقارية" styleClass="main-button" 
-                    GridPane.columnIndex="0" GridPane.rowIndex="0"
-                    prefWidth="220" prefHeight="60"
-                    onAction="#handleRealEstateDrawings"/>
+            <Button onAction="#handleRealEstateDrawings" prefHeight="60" prefWidth="220" styleClass="main-button" text="رسومات عقارية" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             
-            <Button text="خدمات أخرى" styleClass="main-button" 
-                    GridPane.columnIndex="1" GridPane.rowIndex="0"
-                    prefWidth="220" prefHeight="60"
-                    onAction="#handleOtherServices"/>
+            <Button onAction="#handleOtherServices" prefHeight="60" prefWidth="220" styleClass="main-button" text="خدمات أخرى" GridPane.columnIndex="1" GridPane.rowIndex="0" />
             
-            <Button text="الملفات" styleClass="main-button" 
-                    GridPane.columnIndex="2" GridPane.rowIndex="0"
-                    prefWidth="220" prefHeight="60"
-                    onAction="#handleFiles"/>
+            <Button onAction="#handleFiles" prefHeight="60" prefWidth="220" styleClass="main-button" text="الملفات" GridPane.columnIndex="2" GridPane.rowIndex="0" />
             
             <!-- Bottom Center Button -->
-            <Button text="الفواتير" styleClass="main-button" 
-                    GridPane.columnIndex="1" GridPane.rowIndex="1"
-                    prefWidth="220" prefHeight="60"
-                    onAction="#handleInvoices"/>
+            <Button onAction="#handleInvoices" prefHeight="60" prefWidth="220" styleClass="main-button" text="الفواتير" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="200"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="200"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="200"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200" />
             </columnConstraints>
             
             <rowConstraints>
-                <RowConstraints vgrow="SOMETIMES" minHeight="100"/>
-                <RowConstraints vgrow="SOMETIMES" minHeight="100"/>
+                <RowConstraints minHeight="100" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="100" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
     </StackPane>
     
     <!-- Navigation Sidebar (Right Side) -->
-    <VBox prefWidth="256.0" styleClass="sidebar" spacing="0">
+    <VBox prefWidth="256.0" spacing="0" styleClass="sidebar">
         <!-- Logo Section -->
         <StackPane styleClass="logo-container" VBox.vgrow="NEVER">
             <VBox.margin>
-                <Insets bottom="30"/>
+                <Insets bottom="30" />
             </VBox.margin>
-            <ImageView fitHeight="120.0" fitWidth="120.0" preserveRatio="true">
+            <ImageView fitHeight="136.0" fitWidth="165.0" preserveRatio="true">
                 <image>
-                    <Image url="@icon.jpeg"/>
+                    <Image url="@icon.jpeg" />
                 </image>
             </ImageView>
         </StackPane>
         
         <!-- Navigation Buttons -->
-        <VBox styleClass="nav-buttons-container" spacing="0" VBox.vgrow="ALWAYS">
-            <Button fx:id="navHome" text="الواجهة الرئيسية" 
-                    styleClass="nav-button, nav-button-active" 
-                    maxWidth="Infinity"
-                    onAction="#navigateToHome"/>
+        <VBox spacing="0" styleClass="nav-buttons-container" VBox.vgrow="ALWAYS">
+            <Button fx:id="navHome" maxWidth="Infinity" onAction="#navigateToHome" styleClass="nav-button, nav-button-active" text="الواجهة الرئيسية" />
             
-            <Button fx:id="navFiles" text="الملفات" 
-                    styleClass="nav-button" 
-                    maxWidth="Infinity"
-                    onAction="#navigateToFiles"/>
+            <Button fx:id="navFiles" maxWidth="Infinity" onAction="#navigateToFiles" styleClass="nav-button" text="الملفات" />
             
-            <Button fx:id="navInvoices" text="الفواتير" 
-                    styleClass="nav-button" 
-                    maxWidth="Infinity"
-                    onAction="#navigateToInvoices"/>
+            <Button fx:id="navInvoices" maxWidth="Infinity" onAction="#navigateToInvoices" styleClass="nav-button" text="الفواتير" />
             
-            <Button fx:id="navOtherServices" text="خدمات أخرى" 
-                    styleClass="nav-button" 
-                    maxWidth="Infinity"
-                    onAction="#navigateToOtherServices"/>
+            <Button fx:id="navOtherServices" maxWidth="Infinity" onAction="#navigateToOtherServices" styleClass="nav-button" text="خدمات أخرى" />
             
-            <Button fx:id="navRealEstateFees" text="الرسوم العقارية" 
-                    styleClass="nav-button" 
-                    maxWidth="Infinity"
-                    onAction="#navigateToRealEstateFees"/>
+            <Button fx:id="navRealEstateFees" maxWidth="Infinity" onAction="#navigateToRealEstateFees" styleClass="nav-button" text="الرسوم العقارية" />
         </VBox>
     </VBox>
 </HBox>
