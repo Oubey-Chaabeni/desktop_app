@@ -1,0 +1,133 @@
+/* ============================================
+   PRIMARY STYLESHEET - Mohamed El Ghali
+   Geometre Topographe Application
+   ============================================ */
+
+/* Root Container */
+.root-container {
+    -fx-background-color: #313050;
+}
+
+/* ============================================
+   MAIN CONTENT AREA (LEFT SIDE)
+   ============================================ */
+
+.content-area {
+    -fx-background-color: transparent;
+}
+
+.buttons-grid {
+    -fx-alignment: center;
+}
+
+/* Main Buttons on Orange Background */
+.main-button {
+    -fx-background-color: #758CAA;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial", "Segoe UI", sans-serif;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0.3, 0, 3);
+    -fx-padding: 15px 25px;
+    -fx-alignment: center;
+}
+
+.main-button:hover {
+    -fx-background-color: #8BA0BB;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 12, 0.4, 0, 4);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.main-button:pressed {
+    -fx-background-color: #657A92;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 4, 0.2, 0, 2);
+    -fx-translate-y: 1px;
+}
+
+/* ============================================
+   NAVIGATION SIDEBAR (RIGHT SIDE)
+   ============================================ */
+
+.sidebar {
+    -fx-background-color: #3E3D5C;
+    -fx-padding: 30px 0 30px 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 15, 0.2, -3, 0);
+}
+
+/* Logo Container */
+.logo-container {
+    -fx-alignment: center;
+    -fx-padding: 20px;
+}
+
+/* Navigation Buttons Container */
+.nav-buttons-container {
+    -fx-spacing: 8px;
+    -fx-padding: 0 15px;
+}
+
+/* Navigation Button Base Style */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #B8BAC9;
+    -fx-font-family: "Arial", "Segoe UI", sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-cursor: hand;
+    -fx-padding: 18px 20px;
+    -fx-alignment: center-right;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+/* Navigation Button Hover Effect */
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.05);
+    -fx-text-fill: #E8E9F0;
+}
+
+/* Active Navigation Button Style */
+.nav-button-active {
+    -fx-background-color: #313050;
+    -fx-text-fill: white;
+    -fx-background-radius: 15px 0 0 15px;
+    -fx-border-radius: 15px 0 0 15px;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.2), 8, 0.3, -2, 0);
+}
+
+.nav-button-active:hover {
+    -fx-background-color: #313050;
+    -fx-text-fill: white;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+/* Ensure buttons maintain proportions */
+.main-button,
+.nav-button {
+    -fx-min-height: 60px;
+    -fx-pref-height: 60px;
+}
+
+/* ============================================
+   ANIMATION TRANSITIONS
+   ============================================ */
+
+.main-button,
+.nav-button {
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+/* ============================================
+   RTL (RIGHT-TO-LEFT) SUPPORT FOR ARABIC
+   ============================================ */
+
+.main-button,
+.nav-button {
+    -fx-text-alignment: center;
+}

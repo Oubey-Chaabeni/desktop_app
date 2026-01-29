@@ -1,4 +1,3 @@
-com\desktop_app\SecondaryController.class
 module-info.class
 com\desktop_app\App.class
 com\desktop_app\PrimaryController.class
